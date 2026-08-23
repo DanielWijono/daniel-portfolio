@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silverius Daniel — Senior iOS Developer</title>
+<style>
+/* Hallmark · macrostructure: Letter · tone: austere · anchor hue: neutral
+ * nav: N1a minimal · footer: minimal-quiet · genre: editorial · theme: Newsprint
+ */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500&display=swap');
+
+:root{
+  --color-paper:oklch(97.5% 0.005 90);
+  --color-ink:oklch(18% 0.005 90);
+  --color-ink-dim:oklch(42% 0.006 90);
+  --color-accent:oklch(30% 0.01 90);
+  --color-border:oklch(85% 0.006 90);
+  --color-focus:oklch(45% 0.09 250);
+
+  --font-serif:'Source Serif 4', Georgia, serif;
+  --font-sans:'Inter', system-ui, sans-serif;
+
+  --space-3xs:0.25rem; --space-2xs:0.5rem; --space-xs:0.75rem; --space-sm:1rem;
+  --space-md:1.5rem; --space-lg:2.5rem; --space-xl:4rem; --space-2xl:6rem; --space-3xl:9rem;
+
+  --text-xs:0.8125rem; --text-sm:0.9375rem; --text-base:1.0625rem; --text-lg:1.25rem;
+  --text-xl:1.75rem; --text-2xl:2.25rem; --text-display-s:2.75rem; --text-display:3.5rem;
+
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-fast:120ms; --dur-base:220ms;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:clip;}
+body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-serif);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px;transition:none;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+
+.wrap{max-width:680px;margin:0 auto;padding-inline:var(--space-md);}
+
+.nav{padding:var(--space-lg) 0 var(--space-md);}
+.nav-inner{max-width:680px;margin:0 auto;padding-inline:var(--space-md);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-sans);}
+.nav-name{font-size:var(--text-sm);letter-spacing:0.02em;}
+.nav-link{font-size:var(--text-sm);text-decoration:none;color:var(--color-ink-dim);border-bottom:1px solid var(--color-border);padding-bottom:1px;transition:color var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);}
+.nav-link:hover{color:var(--color-ink);border-color:var(--color-ink);}
+
+.hero{padding-block:var(--space-2xl) var(--space-xl);border-bottom:1px solid var(--color-border);}
+.hero-role{font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-ink-dim);letter-spacing:0.03em;margin-bottom:var(--space-md);}
+.hero h1{font-size:clamp(1.9rem,5vw,var(--text-display-s));font-weight:500;line-height:1.2;letter-spacing:-0.01em;margin-bottom:var(--space-lg);}
+.hero p{font-size:var(--text-lg);color:var(--color-ink-dim);max-width:56ch;margin-bottom:var(--space-lg);}
+.hero-links{font-family:var(--font-sans);font-size:var(--text-sm);display:flex;gap:var(--space-lg);flex-wrap:wrap;}
+.hero-links a{color:var(--color-ink);text-decoration:none;border-bottom:1px solid var(--color-ink);padding-bottom:1px;transition:opacity var(--dur-base) var(--ease-out);}
+.hero-links a:hover{opacity:0.6;}
+
+section{padding-block:var(--space-xl);border-bottom:1px solid var(--color-border);}
+section:last-of-type{border-bottom:none;}
+.section-title{font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-ink-dim);letter-spacing:0.03em;margin-bottom:var(--space-lg);text-transform:uppercase;}
+
+.job{margin-bottom:var(--space-lg);}
+.job:last-child{margin-bottom:0;}
+.job-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-md);flex-wrap:wrap;margin-bottom:var(--space-3xs);}
+.job-role{font-size:var(--text-lg);font-weight:500;}
+.job-date{font-family:var(--font-sans);font-size:var(--text-xs);color:var(--color-ink-dim);white-space:nowrap;}
+.job-org{color:var(--color-ink-dim);font-style:italic;margin-bottom:var(--space-sm);}
+.job p.ctx{color:var(--color-ink-dim);font-size:var(--text-sm);margin-bottom:var(--space-sm);}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2xs);}
+.job li{font-size:var(--text-base);padding-left:var(--space-md);position:relative;}
+.job li::before{content:"—";position:absolute;left:0;color:var(--color-ink-dim);}
+
+.skills-line{font-size:var(--text-base);line-height:1.9;}
+.skills-line .label{font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-ink-dim);display:block;margin-bottom:var(--space-2xs);}
+.skills-line + .skills-line{margin-top:var(--space-md);}
+
+.edu-item{margin-bottom:var(--space-md);}
+.edu-item:last-child{margin-bottom:0;}
+.edu-org{font-size:var(--text-lg);font-weight:500;}
+.edu-meta{font-family:var(--font-sans);color:var(--color-ink-dim);font-size:var(--text-sm);}
+
+footer{padding-block:var(--space-xl);}
+.footer-inner{max-width:680px;margin:0 auto;padding-inline:var(--space-md);font-family:var(--font-sans);font-size:var(--text-xs);color:var(--color-ink-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-sm);}
+footer a{color:var(--color-ink-dim);text-decoration:none;}
+footer a:hover{color:var(--color-ink);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Silverius Daniel</span>
+    <a class="nav-link" href="mailto:danielwijono999@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-role">Senior iOS Developer</div>
+    <h1>Eight years of quietly reliable software.</h1>
+    <p>I build secure, well-tested iOS applications for fintech and enterprise — currently leading a team of four at Bank Negara Indonesia. Swift, SwiftUI, UIKit, Combine, MVVM. A 97% crash-free rate, kept that way on purpose.</p>
+    <div class="hero-links">
+      <a href="../assets/Silverius-Daniel-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a href="mailto:danielwijono999@gmail.com">danielwijono999@gmail.com</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Experience</div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">Senior iOS Developer, Bank Negara Indonesia</span><span class="job-date">2024 — present</span></div>
+      <ul>
+        <li>Led a team of four iOS developers delivering onboarding, registration, LifeGoals, profile settings, and referral features</li>
+        <li>Coordinated sprint planning and delivery with Scrum Master, product, and cross-functional teams</li>
+        <li>Delegated tasks and ensured timely delivery of sprint goals</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">Senior iOS Developer, Quadrant Global</span><span class="job-date">2022 — 2024</span></div>
+      <p class="ctx">Quadrant is a global pioneer in location data and custom data collection.</p>
+      <ul>
+        <li>Built a custom SwiftUI clock component to keep design consistent across platforms</li>
+        <li>Developed a custom camera module using bearing and compass values to improve location-data quality</li>
+        <li>Integrated Firebase App Attest to strengthen app protection and reduce fraud risk</li>
+        <li>Added critical business-logic unit tests to reduce production defects</li>
+        <li>Maintained a 97% crash-free rate through Firebase Analytics and stability work</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">Senior iOS Developer, Accenture</span><span class="job-date">2020 — 2022</span></div>
+      <p class="ctx">Accenture is a global consulting firm helping businesses build their digital core.</p>
+      <ul>
+        <li>Implemented secure mobile features, including encryption for sensitive customer data and transactions</li>
+        <li>Delivered eKYC flows to improve customer verification and onboarding reliability</li>
+        <li>Built UI and business logic from requirements documented in Confluence</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">iOS Developer, Asian Technology Solutions</span><span class="job-date">2020</span></div>
+      <p class="ctx">Contract role. ATS provides integrated IT services for local, regional, and global companies.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">iOS Developer, Jack's Labs</span><span class="job-date">2020</span></div>
+      <p class="ctx">A digital design and software development agency in Perth.</p>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><span class="job-role">Android &amp; iOS Developer, PT Sola Interactive / OTOMOTO</span><span class="job-date">2017 — 2019</span></div>
+      <p class="ctx">Mobile applications and new media technologies.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Skills</div>
+    <div class="skills-line">
+      <span class="label">Technical</span>
+      Swift, SwiftUI, UIKit, Combine, MVVM, MVP, MVC, CocoaPods, SPM, unit testing, Git, CI/CD, SDLC, code review, pair programming, debugging.
+    </div>
+    <div class="skills-line">
+      <span class="label">Soft skills</span>
+      Critical thinking, teamwork and individual work, problem solving, agile project management, communication, time management.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-org">Binus University</div>
+      <div class="edu-meta">Bachelor of Computer Science · 2013 — 2017</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-org">iOS Lead Essentials</div>
+      <div class="edu-meta">2022 — 2023</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Silverius Daniel</span>
+    <span>
+      <a href="https://linkedin.com/in/danielwijono" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/DanielWijono" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="../">Other themes</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

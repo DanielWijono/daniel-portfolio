@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silverius Daniel — Senior iOS Developer</title>
+<style>
+/* Hallmark · macrostructure: Stat-Led · tone: utilitarian · anchor hue: cool-blue
+ * nav: N1b canonical · footer: Ft5 statement · genre: modern-minimal · theme: Cobalt
+ */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --color-paper:oklch(98% 0.003 260);
+  --color-paper-2:oklch(95% 0.006 260);
+  --color-ink:oklch(20% 0.02 260);
+  --color-ink-dim:oklch(45% 0.02 260);
+  --color-accent:oklch(52% 0.19 258);
+  --color-accent-2:oklch(90% 0.05 258);
+  --color-border:oklch(88% 0.006 260);
+  --color-focus:oklch(52% 0.19 258);
+
+  --font-display:'Space Grotesk', system-ui, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --space-3xs:0.25rem; --space-2xs:0.5rem; --space-xs:0.75rem; --space-sm:1rem;
+  --space-md:1.5rem; --space-lg:2rem; --space-xl:3rem; --space-2xl:4.5rem; --space-3xl:6.5rem;
+
+  --text-xs:0.75rem; --text-sm:0.875rem; --text-base:1rem; --text-lg:1.25rem;
+  --text-xl:1.75rem; --text-2xl:2.5rem; --text-display-s:3.5rem; --text-display:5rem;
+
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-fast:120ms; --dur-base:200ms;
+  --radius-sm:4px; --radius-md:8px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:clip;}
+body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-display);line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:2px;transition:none;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+
+.wrap{max-width:1040px;margin:0 auto;padding-inline:var(--space-md);}
+
+.nav{position:sticky;top:0;z-index:20;background:oklch(98% 0.003 260 / 0.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-border);}
+.nav-inner{max-width:1040px;margin:0 auto;padding:var(--space-sm) var(--space-md);display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);}
+.nav-name{font-weight:700;font-size:var(--text-base);}
+.nav-links{display:flex;gap:var(--space-lg);list-style:none;font-size:var(--text-sm);}
+.nav-links a{text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
+.nav-links a:hover{color:var(--color-ink);}
+.nav-cta{font-family:var(--font-display);font-weight:600;font-size:var(--text-sm);color:oklch(99% 0 0);background:var(--color-accent);border:none;border-radius:var(--radius-sm);padding:var(--space-2xs) var(--space-md);text-decoration:none;white-space:nowrap;transition:transform var(--dur-fast) var(--ease-out),background var(--dur-base) var(--ease-out);}
+.nav-cta:hover{background:oklch(46% 0.19 258);}
+.nav-cta:active{transform:translateY(1px);}
+@media (max-width:640px){.nav-links{display:none;}}
+
+.hero{padding-block:var(--space-2xl) var(--space-xl);}
+.hero-eyebrow{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);margin-bottom:var(--space-sm);}
+.hero h1{font-size:clamp(2rem,5.5vw,var(--text-display-s));font-weight:700;letter-spacing:-0.02em;line-height:1.05;max-width:18ch;margin-bottom:var(--space-md);}
+.hero p{max-width:56ch;color:var(--color-ink-dim);font-size:var(--text-lg);margin-bottom:var(--space-lg);}
+.hero-actions{display:flex;gap:var(--space-sm);flex-wrap:wrap;}
+.btn{font-family:var(--font-display);font-weight:600;font-size:var(--text-base);text-decoration:none;padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-sm);transition:transform var(--dur-fast) var(--ease-out),background var(--dur-base) var(--ease-out);white-space:nowrap;}
+.btn-primary{background:var(--color-accent);color:oklch(99% 0 0);}
+.btn-primary:hover{background:oklch(46% 0.19 258);}
+.btn-primary:active{transform:translateY(1px);}
+.btn-secondary{background:transparent;color:var(--color-ink);border:1px solid var(--color-border);}
+.btn-secondary:hover{border-color:var(--color-accent);color:var(--color-accent);}
+
+/* stat band — leads the page */
+.stat-band{border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);background:var(--color-paper-2);}
+.stat-grid{max-width:1040px;margin:0 auto;padding:var(--space-xl) var(--space-md);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);}
+@media (max-width:700px){.stat-grid{grid-template-columns:1fr;gap:var(--space-md);}}
+.stat{text-align:left;}
+.stat-n{font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);letter-spacing:-0.02em;}
+.stat-l{font-size:var(--text-sm);color:var(--color-ink-dim);margin-top:var(--space-3xs);}
+
+section{padding-block:var(--space-2xl);}
+.section-head{margin-bottom:var(--space-lg);}
+.section-head h2{font-size:var(--text-xl);font-weight:700;}
+
+.job{display:grid;grid-template-columns:200px 1fr;gap:var(--space-lg);padding-block:var(--space-lg);border-top:1px solid var(--color-border);}
+.job:last-child{border-bottom:1px solid var(--color-border);}
+@media (max-width:700px){.job{grid-template-columns:1fr;gap:var(--space-2xs);}}
+.job-meta{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-ink-dim);}
+.job-role{font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-3xs);}
+.job-org{color:var(--color-accent);font-weight:500;margin-bottom:var(--space-sm);}
+.job-ctx{color:var(--color-ink-dim);font-size:var(--text-sm);margin-bottom:var(--space-sm);}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2xs);}
+.job li{padding-left:var(--space-md);position:relative;}
+.job li::before{content:"→";position:absolute;left:0;color:var(--color-accent);}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);}
+@media (max-width:700px){.grid-2{grid-template-columns:1fr;gap:var(--space-lg);}}
+.tags{display:flex;flex-wrap:wrap;gap:var(--space-2xs);}
+.tag{font-family:var(--font-mono);font-size:var(--text-xs);padding:var(--space-3xs) var(--space-xs);background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);color:var(--color-ink-dim);}
+.subhead{font-size:var(--text-sm);font-weight:600;color:var(--color-ink-dim);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:var(--space-sm);}
+
+.edu-item{margin-bottom:var(--space-md);}
+.edu-org{font-weight:700;}
+.edu-meta{color:var(--color-ink-dim);font-size:var(--text-sm);}
+
+/* footer — Ft5 statement */
+footer{background:var(--color-ink);color:var(--color-paper);padding-block:var(--space-2xl) var(--space-xl);}
+.footer-inner{max-width:1040px;margin:0 auto;padding-inline:var(--space-md);}
+.footer-statement{font-size:clamp(1.5rem,4vw,var(--text-2xl));font-weight:700;max-width:20ch;line-height:1.2;margin-bottom:var(--space-xl);}
+.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-md);padding-top:var(--space-lg);border-top:1px solid oklch(40% 0.02 260);font-size:var(--text-sm);color:oklch(70% 0.01 260);}
+.footer-links{display:flex;gap:var(--space-lg);list-style:none;}
+footer a{color:oklch(90% 0.01 260);text-decoration:none;}
+footer a:hover{color:var(--color-accent-2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Silverius Daniel</span>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:danielwijono999@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-eyebrow">Senior iOS Developer</div>
+    <h1>Ships secure iOS apps that stay up.</h1>
+    <p>8+ years building mobile products for fintech and enterprise — Swift, SwiftUI, UIKit, Combine, MVVM. Currently leading iOS delivery at Bank Negara Indonesia.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:danielwijono999@gmail.com">Contact me</a>
+      <a class="btn btn-secondary" href="../assets/Silverius-Daniel-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </section>
+</main>
+
+<div class="stat-band">
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-n">8+ yrs</div><div class="stat-l">iOS engineering experience</div></div>
+    <div class="stat"><div class="stat-n">97%</div><div class="stat-l">crash-free rate maintained</div></div>
+    <div class="stat"><div class="stat-n">4 devs</div><div class="stat-l">led as team lead at BNI</div></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="experience">
+    <div class="section-head"><h2>Experience</h2></div>
+
+    <div class="job">
+      <div class="job-meta">2024 — present</div>
+      <div>
+        <div class="job-role">Senior iOS Developer</div>
+        <div class="job-org">Bank Negara Indonesia</div>
+        <ul>
+          <li>Led a team of 4 iOS developers delivering onboarding, registration, LifeGoals, profile settings, and referral features</li>
+          <li>Coordinated sprint planning and delivery with Scrum Master, product, and cross-functional teams</li>
+          <li>Delegated tasks and ensured timely delivery of sprint goals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">2022 — 2024</div>
+      <div>
+        <div class="job-role">Senior iOS Developer</div>
+        <div class="job-org">Quadrant Global</div>
+        <div class="job-ctx">Global pioneer in location data and custom data collection.</div>
+        <ul>
+          <li>Built a custom SwiftUI clock UI component for design consistency across platforms</li>
+          <li>Developed a custom camera module using bearing/compass values to improve location-data quality</li>
+          <li>Integrated Firebase App Attest to strengthen app protection and reduce fraud risk</li>
+          <li>Added critical business-logic unit tests, reducing production defects and debugging time</li>
+          <li>Maintained a 97% crash-free rate using Firebase Analytics and stability improvements</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">2020 — 2022</div>
+      <div>
+        <div class="job-role">Senior iOS Developer</div>
+        <div class="job-org">Accenture</div>
+        <div class="job-ctx">Global consulting firm helping businesses build their digital core.</div>
+        <ul>
+          <li>Implemented secure mobile features including encryption methods for sensitive customer data and transactions</li>
+          <li>Delivered eKYC flows to improve customer verification and onboarding reliability</li>
+          <li>Built UI and business logic from product requirements documented in Confluence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">2020</div>
+      <div>
+        <div class="job-role">iOS Developer</div>
+        <div class="job-org">Asian Technology Solutions (contract)</div>
+        <div class="job-ctx">Integrated IT services and business solutions for local, regional, and global companies.</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">2020</div>
+      <div>
+        <div class="job-role">iOS Developer</div>
+        <div class="job-org">Jack's Labs</div>
+        <div class="job-ctx">Digital design and software development agency in Perth.</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-meta">2017 — 2019</div>
+      <div>
+        <div class="job-role">Android &amp; iOS Developer</div>
+        <div class="job-org">PT Sola Interactive / OTOMOTO</div>
+        <div class="job-ctx">Mobile applications and new media technologies.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><h2>Skills</h2></div>
+    <div class="grid-2">
+      <div>
+        <div class="subhead">Technical</div>
+        <div class="tags">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">UIKit</span>
+          <span class="tag">Combine</span><span class="tag">MVVM</span><span class="tag">MVP</span>
+          <span class="tag">MVC</span><span class="tag">CocoaPods</span><span class="tag">SPM</span>
+          <span class="tag">Unit Testing</span><span class="tag">Git</span><span class="tag">CI/CD</span>
+          <span class="tag">SDLC</span><span class="tag">Code Review</span><span class="tag">Pair Programming</span>
+          <span class="tag">Debugging</span>
+        </div>
+      </div>
+      <div>
+        <div class="subhead">Soft skills</div>
+        <div class="tags">
+          <span class="tag">Critical Thinking</span><span class="tag">Teamwork</span>
+          <span class="tag">Problem Solving</span><span class="tag">Agile</span>
+          <span class="tag">Communication</span><span class="tag">Time Management</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2></div>
+    <div class="grid-2">
+      <div class="edu-item">
+        <div class="edu-org">Binus University</div>
+        <div class="edu-meta">Bachelor of Computer Science · 2013 — 2017</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-org">iOS Lead Essentials</div>
+        <div class="edu-meta">2022 — 2023</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-statement">Let's build something that ships and stays up.</div>
+    <div class="footer-row">
+      <span>© 2026 Silverius Daniel</span>
+      <ul class="footer-links">
+        <li><a href="mailto:danielwijono999@gmail.com">Email</a></li>
+        <li><a href="https://linkedin.com/in/danielwijono" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/DanielWijono" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="../">Other themes</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
