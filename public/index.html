@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silverius Daniel — Senior iOS Developer</title>
+<meta name="description" content="Silverius Daniel, senior iOS developer with 8+ years building secure mobile applications for fintech and enterprise. Currently leading iOS delivery at Bank Negara Indonesia.">
+<link rel="icon" href="data:,">
+<title>Silverius Daniel · Senior iOS Developer</title>
 <style>
-/* Hallmark · macrostructure: Stat-Led (luxury hero) · tone: signature · anchor hue: warm-bronze
- * nav: N6 masthead · footer: statement-echo · genre: editorial · theme: Atelier
- */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
 
 :root{
@@ -16,7 +15,6 @@
   --color-ink:oklch(20% 0.02 40);
   --color-ink-dim:oklch(44% 0.02 50);
   --color-accent:oklch(48% 0.11 45);
-  --color-accent-2:oklch(88% 0.03 55);
   --color-border:oklch(84% 0.02 60);
   --color-focus:oklch(48% 0.11 45);
 
@@ -24,10 +22,10 @@
   --font-sans:'Inter', system-ui, sans-serif;
 
   --space-3xs:0.25rem; --space-2xs:0.5rem; --space-xs:0.75rem; --space-sm:1rem;
-  --space-md:1.5rem; --space-lg:2.5rem; --space-xl:4rem; --space-2xl:6rem; --space-3xl:8.5rem;
+  --space-md:1.5rem; --space-lg:2.5rem; --space-xl:4rem; --space-2xl:6rem;
 
   --text-xs:0.75rem; --text-sm:0.9375rem; --text-base:1.0625rem; --text-lg:1.375rem;
-  --text-xl:1.875rem; --text-2xl:2.5rem; --text-display-s:4rem; --text-display:6rem;
+  --text-xl:1.875rem; --text-2xl:2.5rem; --text-display-s:4rem;
 
   --ease-out:cubic-bezier(0.16,1,0.3,1);
   --dur-fast:150ms; --dur-base:260ms;
@@ -35,65 +33,69 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{overflow-x:clip;}
 body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
 a{color:inherit;}
 h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;font-family:var(--font-display);}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px;transition:none;}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
 
+.skip-link{position:fixed;top:var(--space-sm);left:var(--space-sm);z-index:30;display:inline-flex;align-items:center;min-height:44px;max-width:calc(100vw - 2 * var(--space-sm));padding:var(--space-2xs) var(--space-sm);background:var(--color-ink);color:var(--color-paper);text-decoration:none;overflow-wrap:anywhere;transform:translateY(calc(-100% - var(--space-lg)));}
+.skip-link:focus-visible{transform:none;}
+
 .wrap{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);}
 
-/* N6 masthead */
 .masthead{padding:var(--space-md) 0;border-bottom:1px solid var(--color-border);position:sticky;top:0;background:oklch(96% 0.012 70 / 0.92);backdrop-filter:blur(8px);z-index:20;}
 .masthead-inner{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);display:flex;justify-content:space-between;align-items:center;}
 .masthead-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;}
 .masthead-links{display:flex;gap:var(--space-lg);font-size:var(--text-sm);list-style:none;align-items:center;}
-.masthead-links a{text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
+.masthead-links a{display:inline-flex;align-items:center;min-width:44px;min-height:44px;text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
 .masthead-links a:hover{color:var(--color-accent);}
 .masthead-cta{background:var(--color-accent);color:oklch(98% 0.005 70)!important;padding:var(--space-2xs) var(--space-md);border-radius:var(--radius-sm);font-weight:600;}
 .masthead-cta:hover{background:oklch(42% 0.11 45)!important;color:oklch(98% 0.005 70)!important;}
-@media (max-width:640px){.masthead-links a:not(.masthead-cta){display:none;}}
+@media (max-width:750px){
+  .masthead{position:static;padding:var(--space-sm) 0;}
+  .masthead-inner{padding-inline:var(--space-sm);flex-direction:column;align-items:flex-start;gap:var(--space-2xs);}
+  .masthead-name{display:flex;align-items:center;min-height:44px;}
+  .masthead-links{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12ch),1fr));gap:var(--space-3xs);}
+  .masthead-links a{justify-content:center;padding-inline:var(--space-3xs);text-align:center;overflow-wrap:anywhere;}
+  .masthead-cta{padding-inline:var(--space-3xs);}
+}
 
 .hero{padding-block:var(--space-2xl) var(--space-xl);}
-.hero-eyebrow{font-size:var(--text-sm);color:var(--color-ink-dim);margin-bottom:var(--space-md);letter-spacing:0.02em;}
 .hero h1{font-size:clamp(2.25rem,5vw,var(--text-display-s));font-weight:600;letter-spacing:-0.02em;line-height:1;max-width:20ch;margin-bottom:var(--space-lg);}
 .hero p{max-width:56ch;color:var(--color-ink-dim);font-size:var(--text-lg);margin-bottom:var(--space-lg);}
 .hero-actions{display:flex;gap:var(--space-sm);flex-wrap:wrap;}
-.btn{font-family:var(--font-sans);font-weight:600;font-size:var(--text-base);text-decoration:none;padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-sm);transition:transform var(--dur-fast) var(--ease-out),background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out);white-space:nowrap;}
+.btn{font-family:var(--font-sans);font-weight:600;font-size:var(--text-base);text-decoration:none;padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-sm);transition:transform var(--dur-fast) var(--ease-out),background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out);}
 .btn-primary{background:var(--color-ink);color:var(--color-paper);}
 .btn-primary:hover{background:var(--color-accent);}
 .btn-primary:active{transform:translateY(1px);}
 .btn-secondary{background:transparent;color:var(--color-ink);border:1px solid var(--color-ink);}
 .btn-secondary:hover{border-color:var(--color-accent);color:var(--color-accent);}
 
-.stat-band{border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);background:var(--color-paper-2);}
-.stat-grid{max-width:1040px;margin:0 auto;padding:var(--space-xl) var(--space-lg);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);}
-@media (max-width:700px){.stat-grid{grid-template-columns:1fr;gap:var(--space-md);}}
-.stat-n{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;color:var(--color-accent);letter-spacing:-0.01em;}
-.stat-l{font-size:var(--text-sm);color:var(--color-ink-dim);margin-top:var(--space-3xs);}
-
 section{padding-block:var(--space-2xl);}
 .section-head{margin-bottom:var(--space-lg);}
 .section-head h2{font-size:var(--text-xl);font-weight:600;}
 
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);}
-@media (max-width:700px){.work-grid{grid-template-columns:1fr;}}
-.work-card{border:1px solid var(--color-border);border-radius:6px;padding:var(--space-lg);background:var(--color-paper-2);}
+.work-list{display:flex;flex-direction:column;gap:var(--space-lg);}
+.work-featured{border:1px solid var(--color-border);border-radius:6px;padding:var(--space-xl);background:var(--color-paper-2);}
+.work-featured .work-title{font-size:var(--text-xl);}
+.work-compact{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:var(--space-sm) var(--space-lg);padding-block:var(--space-md);border-top:1px solid var(--color-border);}
+.work-compact>*{min-width:0;}
+.work-compact .work-title{font-size:var(--text-base);margin-bottom:var(--space-3xs);}
+.work-compact .work-desc{max-width:52ch;margin-bottom:0;}
 .work-role{font-size:var(--text-sm);color:var(--color-ink-dim);margin-bottom:var(--space-3xs);}
-.work-title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;margin-bottom:var(--space-sm);}
-.work-desc{color:var(--color-ink-dim);font-size:var(--text-sm);margin-bottom:var(--space-md);}
-.work-link{display:inline-flex;align-items:center;gap:var(--space-3xs);font-size:var(--text-sm);font-weight:600;text-decoration:none;color:var(--color-ink-dim);border:1px dashed var(--color-border);border-radius:4px;padding:var(--space-3xs) var(--space-sm);}
-.work-link[data-pending]{cursor:default;}
-.work-link:not([data-pending]){color:var(--color-accent);border-style:solid;border-color:var(--color-accent);transition:background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out);}
-.work-link:not([data-pending]):hover{background:var(--color-accent);color:var(--color-paper);}
+.work-title{font-family:var(--font-display);font-weight:600;margin-bottom:var(--space-sm);}
+.work-desc{color:var(--color-ink-dim);font-size:var(--text-sm);margin-bottom:var(--space-md);overflow-wrap:anywhere;}
+.work-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;gap:var(--space-3xs);font-size:var(--text-sm);font-weight:600;text-align:center;text-decoration:none;overflow-wrap:anywhere;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:4px;padding:var(--space-3xs) var(--space-sm);transition:background var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out);}
+.work-link:hover{background:var(--color-accent);color:var(--color-paper);}
 
-.job{display:grid;grid-template-columns:180px 1fr;gap:var(--space-lg);padding-block:var(--space-lg);border-top:1px solid var(--color-border);}
+.job{display:grid;grid-template-columns:180px minmax(0,1fr);gap:var(--space-lg);padding-block:var(--space-lg);border-top:1px solid var(--color-border);overflow-wrap:anywhere;}
+.job>*{min-width:0;}
 .job:last-child{border-bottom:1px solid var(--color-border);}
-@media (max-width:700px){.job{grid-template-columns:1fr;gap:var(--space-2xs);}}
+@media (max-width:700px){.job{grid-template-columns:minmax(0,1fr);gap:var(--space-2xs);}}
 .job-meta{font-size:var(--text-sm);color:var(--color-ink-dim);}
-.job-role{font-family:var(--font-display);font-weight:600;font-size:var(--text-lg);margin-bottom:var(--space-3xs);}
-.job-org{color:var(--color-accent);font-weight:500;margin-bottom:var(--space-sm);}
+.job-role{font-family:var(--font-display);font-weight:600;font-size:var(--text-lg);margin-bottom:var(--space-sm);}
+.job-org{display:block;font-family:var(--font-sans);font-size:var(--text-base);color:var(--color-accent);font-weight:500;margin-top:var(--space-3xs);}
 .job-ctx{color:var(--color-ink-dim);font-size:var(--text-sm);margin-bottom:var(--space-sm);}
 .job ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2xs);}
 .job li{padding-left:var(--space-md);position:relative;}
@@ -101,8 +103,9 @@ section{padding-block:var(--space-2xl);}
 
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);}
 @media (max-width:700px){.grid-2{grid-template-columns:1fr;gap:var(--space-lg);}}
+.skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:var(--space-lg);}
 .tags{display:flex;flex-wrap:wrap;gap:var(--space-2xs);}
-.tag{font-size:var(--text-xs);padding:var(--space-3xs) var(--space-sm);background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:20px;color:var(--color-ink-dim);}
+.tag{font-size:var(--text-xs);padding:var(--space-3xs) var(--space-sm);background:var(--color-paper-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);color:var(--color-ink-dim);}
 .subhead{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;color:var(--color-ink);margin-bottom:var(--space-sm);}
 
 .edu-item{margin-bottom:var(--space-md);}
@@ -111,17 +114,28 @@ section{padding-block:var(--space-2xl);}
 
 footer{background:var(--color-ink);color:var(--color-paper);padding-block:var(--space-2xl) var(--space-xl);}
 .footer-inner{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);}
-.footer-statement{font-family:var(--font-display);font-size:clamp(1.75rem,5vw,var(--text-2xl));font-weight:600;max-width:16ch;line-height:1.15;margin-bottom:var(--space-xl);}
+.footer-statement{font-family:var(--font-display);font-size:clamp(1.75rem,5vw,var(--text-2xl));font-weight:600;max-width:16ch;line-height:1.15;margin-bottom:var(--space-xl);overflow-wrap:anywhere;}
 .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-md);padding-top:var(--space-lg);border-top:1px solid oklch(35% 0.02 50);font-size:var(--text-sm);color:oklch(70% 0.02 60);}
-.footer-links{display:flex;gap:var(--space-lg);list-style:none;}
-footer a{color:oklch(92% 0.02 60);text-decoration:none;}
+.footer-links{display:flex;flex-wrap:wrap;gap:0 var(--space-xs);list-style:none;}
+footer a{display:inline-flex;align-items:center;min-width:44px;min-height:44px;color:oklch(92% 0.02 60);text-decoration:none;}
 footer a:hover{color:oklch(75% 0.1 50);}
+footer a:focus-visible{outline-color:var(--color-paper);}
+@media (max-width:750px){
+  .wrap,.footer-inner{padding-inline:var(--space-sm);}
+  .hero{padding-block:var(--space-xl) var(--space-lg);}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .btn{padding-inline:var(--space-sm);text-align:center;white-space:normal;}
+  section{padding-block:var(--space-lg);}
+  .work-featured{padding:var(--space-md);}
+}
 </style>
 </head>
 <body>
 
-<div class="masthead">
-  <div class="masthead-inner">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <nav class="masthead-inner" aria-label="Primary">
     <span class="masthead-name">Silverius Daniel</span>
     <ul class="masthead-links">
       <li><a href="#work">Work</a></li>
@@ -130,44 +144,34 @@ footer a:hover{color:oklch(75% 0.1 50);}
       <li><a href="#education">Education</a></li>
       <li><a class="masthead-cta" href="mailto:danielwijono999@gmail.com">Contact</a></li>
     </ul>
-  </div>
-</div>
+  </nav>
+</header>
 
-<main class="wrap">
+<main class="wrap" id="main-content" tabindex="-1">
   <section class="hero">
-    <div class="hero-eyebrow">Senior iOS Developer</div>
-    <h1>Building secure iOS apps for millions of users.</h1>
+    <h1>Building secure iOS apps for fintech and enterprise.</h1>
     <p>8+ years building secure, scalable mobile applications for fintech and enterprise. Swift, SwiftUI, UIKit, Combine, MVVM, VIPER. Currently leading iOS delivery at Bank Negara Indonesia.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="mailto:danielwijono999@gmail.com">Contact me</a>
-      <a class="btn btn-secondary" href="assets/Silverius-Daniel-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <a class="btn btn-secondary" href="assets/Silverius-Daniel-CV.pdf" download="Silverius-Daniel-CV.pdf">Download CV</a>
     </div>
   </section>
-</main>
-
-<div class="stat-band">
-  <div class="stat-grid">
-    <div><div class="stat-n">8+ yrs</div><div class="stat-l">iOS engineering experience</div></div>
-    <div><div class="stat-n">97%</div><div class="stat-l">crash-free rate maintained</div></div>
-    <div><div class="stat-n">4 devs</div><div class="stat-l">led as team lead at BNI</div></div>
-  </div>
-</div>
-
-<main class="wrap">
   <section id="work">
     <div class="section-head"><h2>Selected Work</h2></div>
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="work-role">Bank Negara Indonesia · 2024 — present</div>
-        <div class="work-title">BNI Mobile Banking</div>
+    <div class="work-list">
+      <div class="work-featured">
+        <div class="work-role">Bank Negara Indonesia · 2024-present</div>
+        <h3 class="work-title">BNI Mobile Banking</h3>
         <div class="work-desc">Onboarding, registration, LifeGoals, profile settings, and referral features for a national bank's flagship app.</div>
-        <a class="work-link" href="https://apps.apple.com/id/app/wondr-by-bni/id6499518320" target="_blank" rel="noopener">View on App Store ↗</a>
+        <a class="work-link" href="https://apps.apple.com/id/app/wondr-by-bni/id6499518320" target="_blank" rel="noopener">View on App Store</a>
       </div>
-      <div class="work-card">
-        <div class="work-role">Quadrant Global · 2022 — 2024</div>
-        <div class="work-title">Quadrant location-data app</div>
-        <div class="work-desc">Custom SwiftUI clock component, bearing/compass-driven camera module, Firebase App Attest integration.</div>
-        <a class="work-link" href="https://github.com/DanielWijono/AndroidTimePickerSwiftUI" target="_blank" rel="noopener">View on GitHub ↗</a>
+      <div class="work-compact">
+        <div>
+          <div class="work-role">Quadrant Global · 2022-2024</div>
+          <h3 class="work-title">Custom SwiftUI clock component</h3>
+          <div class="work-desc">Open-source time picker built for the Quadrant location-data app, plus a bearing/compass-driven camera module and Firebase App Attest integration on the same team.</div>
+        </div>
+        <a class="work-link" href="https://github.com/DanielWijono/AndroidTimePickerSwiftUI" target="_blank" rel="noopener">View component on GitHub</a>
       </div>
     </div>
   </section>
@@ -176,10 +180,10 @@ footer a:hover{color:oklch(75% 0.1 50);}
     <div class="section-head"><h2>Experience</h2></div>
 
     <div class="job">
-      <div class="job-meta">2024 — present</div>
+      <div class="job-meta">2024-present</div>
       <div>
-        <div class="job-role">Senior iOS Developer</div>
-        <div class="job-org">Bank Negara Indonesia</div>
+        <h3 class="job-role">Senior iOS Developer <span class="job-org">Bank Negara Indonesia</span></h3>
+        <div class="job-ctx">State-owned national bank in Indonesia.</div>
         <ul>
           <li>Led a team of 4 iOS developers delivering onboarding, registration, LifeGoals, profile settings, and referral features</li>
           <li>Coordinated sprint planning and delivery with Scrum Master, product, and cross-functional teams</li>
@@ -189,11 +193,10 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-meta">2022 — 2024</div>
+      <div class="job-meta">2022-2024</div>
       <div>
-        <div class="job-role">Senior iOS Developer</div>
-        <div class="job-org">Quadrant Global</div>
-        <div class="job-ctx">Global pioneer in location data and custom data collection.</div>
+        <h3 class="job-role">Senior iOS Developer <span class="job-org">Quadrant Global</span></h3>
+        <div class="job-ctx">Location-data and custom data collection company.</div>
         <ul>
           <li>Built a custom SwiftUI clock UI component for design consistency across platforms</li>
           <li>Developed a custom camera module using bearing/compass values to improve location-data quality</li>
@@ -205,11 +208,10 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-meta">2020 — 2022</div>
+      <div class="job-meta">2020-2022</div>
       <div>
-        <div class="job-role">Senior iOS Developer</div>
-        <div class="job-org">Accenture</div>
-        <div class="job-ctx">Global consulting firm helping businesses build their digital core.</div>
+        <h3 class="job-role">Senior iOS Developer <span class="job-org">Accenture</span></h3>
+        <div class="job-ctx">Professional services and technology consulting firm.</div>
         <ul>
           <li>Implemented secure mobile features including encryption methods for sensitive customer data and transactions</li>
           <li>Delivered eKYC flows to improve customer verification and onboarding reliability</li>
@@ -219,53 +221,36 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-meta">2020</div>
+      <div class="job-meta">2017-2020</div>
       <div>
-        <div class="job-role">iOS Developer</div>
-        <div class="job-org">Asian Technology Solutions (contract)</div>
-        <div class="job-ctx">Integrated IT services and business solutions for local, regional, and global companies.</div>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="job-meta">2020</div>
-      <div>
-        <div class="job-role">iOS Developer</div>
-        <div class="job-org">Jack's Labs</div>
-        <div class="job-ctx">Digital design and software development agency in Perth.</div>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="job-meta">2017 — 2019</div>
-      <div>
-        <div class="job-role">Android &amp; iOS Developer</div>
-        <div class="job-org">PT Sola Interactive / OTOMOTO</div>
-        <div class="job-ctx">Mobile applications and new media technologies.</div>
+        <h3 class="job-role">Earlier iOS and Android roles <span class="job-org">Asian Technology Solutions, Jack's Labs, PT Sola Interactive / OTOMOTO</span></h3>
+        <div class="job-ctx">Contract, agency, and product teams.</div>
       </div>
     </div>
   </section>
 
   <section id="skills">
     <div class="section-head"><h2>Skills</h2></div>
-    <div class="grid-2">
+    <div class="skill-groups">
       <div>
-        <div class="subhead">Technical</div>
+        <h3 class="subhead">Languages and frameworks</h3>
         <div class="tags">
           <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">UIKit</span>
-          <span class="tag">Combine</span><span class="tag">MVVM</span><span class="tag">MVP</span>
-          <span class="tag">MVC</span><span class="tag">CocoaPods</span><span class="tag">SPM</span>
-          <span class="tag">Unit Testing</span><span class="tag">Git</span><span class="tag">CI/CD</span>
-          <span class="tag">SDLC</span><span class="tag">Code Review</span><span class="tag">Pair Programming</span>
-          <span class="tag">Debugging</span>
+          <span class="tag">Combine</span>
         </div>
       </div>
       <div>
-        <div class="subhead">Soft skills</div>
+        <h3 class="subhead">Architecture</h3>
         <div class="tags">
-          <span class="tag">Critical Thinking</span><span class="tag">Teamwork</span>
-          <span class="tag">Problem Solving</span><span class="tag">Agile</span>
-          <span class="tag">Communication</span><span class="tag">Time Management</span>
+          <span class="tag">MVVM</span><span class="tag">VIPER</span><span class="tag">MVP</span>
+          <span class="tag">MVC</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="subhead">Tooling and delivery</h3>
+        <div class="tags">
+          <span class="tag">CocoaPods</span><span class="tag">SPM</span><span class="tag">Unit Testing</span>
+          <span class="tag">Git</span><span class="tag">CI/CD</span>
         </div>
       </div>
     </div>
@@ -275,12 +260,12 @@ footer a:hover{color:oklch(75% 0.1 50);}
     <div class="section-head"><h2>Education</h2></div>
     <div class="grid-2">
       <div class="edu-item">
-        <div class="edu-org">Binus University</div>
-        <div class="edu-meta">Bachelor of Computer Science · 2013 — 2017</div>
+        <h3 class="edu-org">Binus University</h3>
+        <div class="edu-meta">Bachelor of Computer Science · 2013-2017</div>
       </div>
       <div class="edu-item">
-        <div class="edu-org">iOS Lead Essentials</div>
-        <div class="edu-meta">2022 — 2023</div>
+        <h3 class="edu-org">iOS Lead Essentials</h3>
+        <div class="edu-meta">2022-2023</div>
       </div>
     </div>
   </section>
@@ -288,7 +273,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-statement">Let's build something that ships and stays up.</div>
+    <div class="footer-statement">Silverius Daniel, Senior iOS Developer.</div>
     <div class="footer-row">
       <span>© 2026 Silverius Daniel</span>
       <ul class="footer-links">

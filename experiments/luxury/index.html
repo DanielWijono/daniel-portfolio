@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silverius Daniel — Senior iOS Developer</title>
+<title>Silverius Daniel · Senior iOS Developer</title>
 <style>
 /* Hallmark · macrostructure: Specimen · tone: luxury · anchor hue: warm-bronze
- * nav: N6 masthead · footer: statement-echo · genre: editorial · theme: Atelier
+ * nav: masthead · footer: statement-echo · genre: editorial · theme: Atelier
  */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
@@ -33,7 +33,6 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{overflow-x:clip;}
 body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
 a{color:inherit;}
 h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;font-family:var(--font-display);}
@@ -42,14 +41,19 @@ h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;font-family:var(--
 
 .wrap{max-width:1100px;margin:0 auto;padding-inline:var(--space-lg);}
 
-/* N6 masthead */
 .masthead{padding:var(--space-lg) 0;border-bottom:1px solid var(--color-border);}
 .masthead-inner{max-width:1100px;margin:0 auto;padding-inline:var(--space-lg);display:flex;justify-content:space-between;align-items:center;}
 .masthead-name{font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:0.01em;}
 .masthead-links{display:flex;gap:var(--space-lg);font-size:var(--text-sm);list-style:none;}
-.masthead-links a{text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
+.masthead-links a{display:inline-flex;align-items:center;min-width:44px;min-height:44px;text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
 .masthead-links a:hover{color:var(--color-accent);}
-@media (max-width:640px){.masthead-links{display:none;}}
+@media (max-width:640px){
+  .masthead{padding:var(--space-sm) 0;}
+  .masthead-inner{padding-inline:var(--space-sm);flex-direction:column;align-items:flex-start;gap:var(--space-2xs);}
+  .masthead-name{display:flex;align-items:center;min-height:44px;}
+  .masthead-links{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3xs);}
+  .masthead-links a{justify-content:center;padding-inline:var(--space-3xs);}
+}
 
 .hero{padding-block:var(--space-3xl) var(--space-2xl);border-bottom:1px solid var(--color-border);}
 .hero-num{font-size:var(--text-sm);color:var(--color-ink-dim);margin-bottom:var(--space-md);letter-spacing:0.04em;}
@@ -100,8 +104,8 @@ footer{background:var(--color-ink);color:var(--color-paper);padding-block:var(--
 .footer-inner{max-width:1100px;margin:0 auto;padding-inline:var(--space-lg);}
 .footer-statement{font-family:var(--font-display);font-size:clamp(1.75rem,5vw,var(--text-2xl));font-weight:500;max-width:16ch;line-height:1.15;margin-bottom:var(--space-xl);}
 .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-md);padding-top:var(--space-lg);border-top:1px solid oklch(35% 0.02 50);font-size:var(--text-sm);color:oklch(70% 0.02 60);}
-.footer-links{display:flex;gap:var(--space-lg);list-style:none;}
-footer a{color:oklch(92% 0.02 60);text-decoration:none;}
+.footer-links{display:flex;flex-wrap:wrap;gap:0 var(--space-xs);list-style:none;}
+footer a{display:inline-flex;align-items:center;min-width:44px;min-height:44px;color:oklch(92% 0.02 60);text-decoration:none;}
 footer a:hover{color:oklch(75% 0.1 50);}
 </style>
 </head>
@@ -131,7 +135,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
         <p class="hero-desc">8+ years building secure, scalable mobile applications for fintech and enterprise. Swift, SwiftUI, UIKit, Combine, MVVM, VIPER. A 97% crash-free rate, held as a standard.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:danielwijono999@gmail.com">Contact me</a>
-          <a class="btn btn-secondary" href="../assets/Silverius-Daniel-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-secondary" href="../../public/assets/Silverius-Daniel-CV.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
     </div>
@@ -141,7 +145,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
     <div class="section-head"><span class="section-num">01</span><h2>Experience</h2></div>
 
     <div class="job">
-      <div class="job-date">2024 — present</div>
+      <div class="job-date">2024-present</div>
       <div>
         <div class="job-role">Senior iOS Developer</div>
         <div class="job-org">Bank Negara Indonesia</div>
@@ -154,7 +158,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-date">2022 — 2024</div>
+      <div class="job-date">2022-2024</div>
       <div>
         <div class="job-role">Senior iOS Developer</div>
         <div class="job-org">Quadrant Global</div>
@@ -170,7 +174,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-date">2020 — 2022</div>
+      <div class="job-date">2020-2022</div>
       <div>
         <div class="job-role">Senior iOS Developer</div>
         <div class="job-org">Accenture</div>
@@ -202,7 +206,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
     </div>
 
     <div class="job">
-      <div class="job-date">2017 — 2019</div>
+      <div class="job-date">2017-2019</div>
       <div>
         <div class="job-role">Android &amp; iOS Developer</div>
         <div class="job-org">PT Sola Interactive / OTOMOTO</div>
@@ -241,11 +245,11 @@ footer a:hover{color:oklch(75% 0.1 50);}
     <div class="grid-2">
       <div class="edu-item">
         <div class="edu-org">Binus University</div>
-        <div class="edu-meta">Bachelor of Computer Science · 2013 — 2017</div>
+        <div class="edu-meta">Bachelor of Computer Science · 2013-2017</div>
       </div>
       <div class="edu-item">
         <div class="edu-org">iOS Lead Essentials</div>
-        <div class="edu-meta">2022 — 2023</div>
+        <div class="edu-meta">2022-2023</div>
       </div>
     </div>
   </section>
@@ -260,7 +264,7 @@ footer a:hover{color:oklch(75% 0.1 50);}
         <li><a href="mailto:danielwijono999@gmail.com">Email</a></li>
         <li><a href="https://linkedin.com/in/danielwijono" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://github.com/DanielWijono" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="../">Other themes</a></li>
+        <li><a href="../../public/">Default portfolio</a></li>
       </ul>
     </div>
   </div>
