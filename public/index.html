@@ -45,20 +45,21 @@ h1,h2,h3{font-style:normal;overflow-wrap:anywhere;min-width:0;font-family:var(--
 .wrap{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);}
 
 .masthead{padding:var(--space-md) 0;border-bottom:1px solid var(--color-border);position:sticky;top:0;background:oklch(96% 0.012 70 / 0.92);backdrop-filter:blur(8px);z-index:20;}
-.masthead-inner{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);display:flex;justify-content:space-between;align-items:center;}
-.masthead-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;}
-.masthead-links{display:flex;gap:var(--space-lg);font-size:var(--text-sm);list-style:none;align-items:center;}
-.masthead-links a{display:inline-flex;align-items:center;min-width:44px;min-height:44px;text-decoration:none;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
+.masthead-inner{max-width:1040px;margin:0 auto;padding-inline:var(--space-lg);display:flex;align-items:center;gap:var(--space-md);}
+.masthead-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;margin-right:auto;}
+.masthead-links{display:flex;gap:var(--space-md);font-size:var(--text-sm);list-style:none;align-items:center;}
+.masthead-links a,.masthead-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;}
+.masthead-links a{min-width:44px;color:var(--color-ink-dim);transition:color var(--dur-base) var(--ease-out);}
 .masthead-links a:hover{color:var(--color-accent);}
-.masthead-cta{background:var(--color-accent);color:oklch(98% 0.005 70)!important;padding:var(--space-2xs) var(--space-md);border-radius:var(--radius-sm);font-weight:600;}
-.masthead-cta:hover{background:oklch(42% 0.11 45)!important;color:oklch(98% 0.005 70)!important;}
+.masthead-cta{font-size:var(--text-sm);font-weight:600;background:var(--color-accent);color:oklch(98% 0.005 70);padding:var(--space-2xs) var(--space-md);border-radius:var(--radius-sm);transition:background var(--dur-base) var(--ease-out);}
+.masthead-cta:hover{background:oklch(42% 0.11 45);}
 @media (max-width:750px){
   .masthead{position:static;padding:var(--space-sm) 0;}
-  .masthead-inner{padding-inline:var(--space-sm);flex-direction:column;align-items:flex-start;gap:var(--space-2xs);}
-  .masthead-name{display:flex;align-items:center;min-height:44px;}
-  .masthead-links{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12ch),1fr));gap:var(--space-3xs);}
-  .masthead-links a{justify-content:center;padding-inline:var(--space-3xs);text-align:center;overflow-wrap:anywhere;}
-  .masthead-cta{padding-inline:var(--space-3xs);}
+  .masthead-inner{padding-inline:var(--space-sm);flex-wrap:wrap;gap:var(--space-2xs) var(--space-sm);}
+  .masthead-name{font-size:clamp(var(--text-base),4.5vw,var(--text-lg));min-height:44px;display:flex;align-items:center;}
+  .masthead-links{order:3;width:100%;justify-content:space-between;gap:var(--space-3xs);}
+  .masthead-links a{padding-inline:var(--space-3xs);}
+  .masthead-cta{padding-inline:var(--space-sm);}
 }
 
 .hero{padding-block:var(--space-2xl) var(--space-xl);}
@@ -142,8 +143,8 @@ footer a:focus-visible{outline-color:var(--color-paper);}
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a class="masthead-cta" href="mailto:danielwijono999@gmail.com">Contact</a></li>
     </ul>
+    <a class="masthead-cta" href="mailto:danielwijono999@gmail.com">Contact</a>
   </nav>
 </header>
 

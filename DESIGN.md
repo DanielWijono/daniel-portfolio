@@ -43,6 +43,8 @@ Editorial craft language: warm paper background, one restrained bronze accent, s
 - **Earlier roles compressed into one entry:** three roles had no contribution evidence to show, so they are grouped rather than padded out to look equal to roles that do have evidence.
 - **Skills grouped, verifiable only:** three named groups (languages and frameworks, architecture, tooling and delivery) let a recruiter scan by category; unverifiable soft-skill claims and routine activities every developer performs were removed because the Experience bullets already demonstrate them with proof.
 - **Footer colophon:** the closing display line signs the page the way the masthead opens it, instead of repeating a metric already stated in Experience.
+- **Two-row mobile masthead:** below 750px the nameplate and the Contact action share the first row and the four section links spread evenly across the second, because a wrapping grid left Contact orphaned on a third row. Every destination stays visible and one tap away, so no menu is hidden behind an icon.
+- **Contact sits outside the section list:** it is an action rather than a page destination, and keeping it a sibling of the list is what lets it ride the nameplate row on mobile and the link row on desktop.
 
 ## Technical variant (`experiments/technical/`)
 
